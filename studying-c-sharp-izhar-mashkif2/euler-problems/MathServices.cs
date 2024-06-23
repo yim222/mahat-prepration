@@ -28,7 +28,7 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
 
             //Console.WriteLine("Upper = " + upper);
             
-            for(int i = 3; i <= upper; i++)
+            for(int i = 3; i <= upper; i+=2)
             {
                 if(num % i == 0)
                 {

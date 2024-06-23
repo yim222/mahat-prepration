@@ -33,16 +33,16 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
         {
             long num = 600851475143;
 
-            long upper = (int)Math.Sqrt(num);
+            long upper = (long)Math.Sqrt(num);
             //Console.WriteLine(upper * upper);
 
             if (upper % 2 == 0) upper--;
             //Console.WriteLine("upper = " + upper ) ;
-            for(long i = upper; i >=3; i--)
+            for(long i = upper; i >=3; i-=2)
             {
-                if (MathServices.IsPrime(i))
+                if (num % i == 0)
                 {
-                    if(num % i == 0)
+                    if(MathServices.IsPrime(i))
                     {
                         Console.WriteLine("Result = " + i);
                         return;
