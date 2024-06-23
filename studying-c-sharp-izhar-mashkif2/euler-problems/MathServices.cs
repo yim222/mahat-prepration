@@ -39,5 +39,20 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
             return true;
         }
 
+        public static bool IsPalindrome(string str)
+        {
+           
+            int length = str.Length/2;
+
+            for(int i = 0; i < length; i++)
+            {
+                if (!str[i].Equals(str[str.Length - 1 - i])){
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
     }
 }
