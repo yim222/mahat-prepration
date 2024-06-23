@@ -9,7 +9,7 @@ namespace studying_c_sharp_izhar_mashkif2.draft
     public class MyDraftArea
     {
 
-        public void Draft1()
+        public static void Draft1()
         {
 
             Console.WriteLine("Draft area");
