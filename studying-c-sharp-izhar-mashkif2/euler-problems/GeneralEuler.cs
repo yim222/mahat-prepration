@@ -44,7 +44,7 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
 
             SolveProblem4(10, 99);
 
-            SolveProblem4(100, 999);
+            SolveProblem4(1000, 9999);
         }
 
         public static void SolveProblem3()
@@ -77,8 +77,15 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
 
             //variable for hold the last palindrom
             int maxPalindrom = 0;
-            for(int i= upperBound; i >= lowerBound; i--)
+            int smallJ = 0;
+
+            for (int i= upperBound; i >= lowerBound; i--)
             {
+                //Console.WriteLine("i = " + i);//for test
+                if (i <= smallJ)
+                {
+                    break;
+                }
                 //if it's divided by 10 - continue to the next loop
                 if(i% 10 == 0)
                 {
@@ -86,6 +93,7 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
                 }
                 //inner loop from this number
                 for(int j = i; j >= lowerBound; j--)
+
                 {
                     if(j% 10 == 0)
                     {
@@ -102,6 +110,7 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
                             //for test
                             Console.WriteLine($"{i} * {j} = {product}");
                             maxPalindrom = product;
+                            smallJ = j;
                         }
                     }
                 }//end of inner loop
