@@ -43,6 +43,8 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
             //test small example: 
 
             SolveProblem4(10, 99);
+
+            SolveProblem4(100, 999);
         }
 
         public static void SolveProblem3()
