@@ -20,7 +20,7 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
 
             //getting upper bound 
 
-            int upper = (int)Math.Sqrt(num);
+            long upper = (long)Math.Sqrt(num);
 
             //I think that because it's odd number it's always odd, and no need to do it odd
             // -- after checking - it's not true, so let set it even

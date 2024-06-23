@@ -24,10 +24,31 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
                     Console.Write(numbers[i] + ",");
                 }
             }
+
+            Console.WriteLine("Solve problem 3");
+            SolveProblem3();
         }
 
         public static void SolveProblem3()
         {
+            long num = 600851475143;
+
+            long upper = (int)Math.Sqrt(num);
+            //Console.WriteLine(upper * upper);
+
+            if (upper % 2 == 0) upper--;
+            //Console.WriteLine("upper = " + upper ) ;
+            for(long i = upper; i >=3; i--)
+            {
+                if (MathServices.IsPrime(i))
+                {
+                    if(num % i == 0)
+                    {
+                        Console.WriteLine("Result = " + i);
+                        return;
+                    }
+                }
+            }
 
         }
     }
