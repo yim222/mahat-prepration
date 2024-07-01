@@ -31,6 +31,15 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
 
             SolveProblem3(35);//7
             SolveProblem3(14);//7
+            SolveProblem3(13);//is prime
+            SolveProblem3(28);//7 ---> wrong answer
+
+            //SolveProblem3V2(num);
+            //SolveProblem3V2(35);//7
+            //SolveProblem3V2(14);//7
+            //SolveProblem3V2(13);//is prime
+            //SolveProblem3(28);//7 ---> wrong answer
+
 
             int big = 999 * 999;
             Console.WriteLine("big = " + big / 999);
@@ -91,6 +100,59 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
             {
                 Console.WriteLine("{0} number is prime", num);
             }
+
+        }
+
+
+        public static void SolveProblem3V2(long num)
+        {
+
+            //long num = 17;
+            //long upper = (long)Math.Sqrt(num);
+            long upper = num / 2;
+            //Console.WriteLine(upper * upper);
+            long lowest = (long)Math.Sqrt(num);
+            long  lastPrimeFactor = 0;
+            //if (upper % 2 == 0) upper--;
+            //Console.WriteLine("upper = " + upper ) ;
+            for (long i = upper; i >= lowest; i --)
+            {
+                if (num % i == 0)
+                {
+                    long divider = num / i;
+                    if (MathServices.IsPrime(i) && MathServices.IsPrime(divider))
+                    {                      
+                        long temp = Math.Max(lastPrimeFactor, divider);
+
+                        if(temp > lastPrimeFactor)
+                        {
+                            lastPrimeFactor = temp;
+                        }
+                        
+                    }
+                }
+            }
+
+            if(lastPrimeFactor > 0)
+            {
+                Console.WriteLine("Result = {0} {2} is the largest prime factor", num, lastPrimeFactor);
+                return;
+            }
+            //if (num % 2 == 0)
+            //{
+
+            //    long result = MathServices.IsPrime(num / 2) ? num / 2 : 2;
+
+            //    Console.WriteLine("Result = {0} * {1} = {2}|  {3} is the largest prime factor", num / 2, 2, num, result);
+            //    return;
+
+
+            //}
+            //else
+            //{
+            //}
+            Console.WriteLine("{0} number is prime", num);
+
 
         }
 
