@@ -80,14 +80,16 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
             if (num % 2 == 0)
             {
 
-                Console.WriteLine("Result = " + 2);
+                long result = MathServices.IsPrime(num / 2) ? num / 2 : 2;
+
+                Console.WriteLine("Result = {0} * {1} = {2}|  {3} is the largest prime factor", num/2, 2, num, result);
                 return;
 
 
             }
             else
             {
-                Console.WriteLine("this number is prime");
+                Console.WriteLine("{0} number is prime", num);
             }
 
         }
