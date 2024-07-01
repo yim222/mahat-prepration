@@ -32,7 +32,8 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
             SolveProblem3(35);//7
             SolveProblem3(14);//7
             SolveProblem3(13);//is prime
-            SolveProblem3(28);//7 ---> wrong answer
+            SolveProblem3(28);//7 --->fixed
+            SolveProblem3(390);//13
 
             //SolveProblem3V2(num);
             //SolveProblem3V2(35);//7
@@ -88,10 +89,13 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
             }
             if (num % 2 == 0)
             {
+                long result = num;
+                while(result % 2 == 0 && (result !=2))
+                {
+                    result = result / 2;
+                }
 
-                long result = MathServices.IsPrime(num / 2) ? num / 2 : 2;
-
-                Console.WriteLine("Result = {0} * {1} = {2}|  {3} is the largest prime factor", num/2, 2, num, result);
+                Console.WriteLine("num = {0} Result2 = {1}", num, result);
                 return;
 
 
