@@ -26,7 +26,11 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
             }
 
             Console.WriteLine("\nSolve problem 3");
-            SolveProblem3();
+            long num = 600851475143;
+            SolveProblem3(num);
+
+            SolveProblem3(35);//7
+            SolveProblem3(14);//7
 
             int big = 999 * 999;
             Console.WriteLine("big = " + big / 999);
@@ -47,11 +51,12 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
             SolveProblem4(1000, 9999);
         }
 
-        public static void SolveProblem3()
+        public static void SolveProblem3(long num)
         {
-            long num = 600851475143;
-
+           
+            //long num = 17;
             long upper = (long)Math.Sqrt(num);
+            //long upper = num / 2;
             //Console.WriteLine(upper * upper);
 
             if (upper % 2 == 0) upper--;
@@ -62,10 +67,27 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
                 {
                     if (MathServices.IsPrime(i))
                     {
-                        Console.WriteLine("Result = " + i);
+
+                        if (MathServices.IsPrime(num / i))
+                        {
+                            i = num / i;
+                        }
+                        Console.WriteLine("Result = {0} * {1} = {2}|  {3} is the largest prime factor" , i, num/i, num, i );
                         return;
                     }
                 }
+            }
+            if (num % 2 == 0)
+            {
+
+                Console.WriteLine("Result = " + 2);
+                return;
+
+
+            }
+            else
+            {
+                Console.WriteLine("this number is prime");
             }
 
         }
@@ -79,7 +101,7 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
             int maxPalindrom = 0;
             int smallJ = 0;
 
-            for (int i= upperBound; i >= lowerBound; i--)
+            for (int i = upperBound; i >= lowerBound; i--)
             {
                 //Console.WriteLine("i = " + i);//for test
                 if (i <= smallJ)
@@ -87,15 +109,15 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
                     break;
                 }
                 //if it's divided by 10 - continue to the next loop
-                if(i% 10 == 0)
+                if (i % 10 == 0)
                 {
                     continue;
                 }
                 //inner loop from this number
-                for(int j = i; j >= lowerBound; j--)
+                for (int j = i; j >= lowerBound; j--)
 
                 {
-                    if(j% 10 == 0)
+                    if (j % 10 == 0)
                     {
                         continue;
                     }
@@ -103,9 +125,10 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
                     int product = i * j;
 
                     //if it's palindrom
-                    if (MathServices.IsPalindrome(product.ToString() )) {
+                    if (MathServices.IsPalindrome(product.ToString()))
+                    {
 
-                        if(product > maxPalindrom)
+                        if (product > maxPalindrom)
                         {
                             //for test
                             Console.WriteLine($"{i} * {j} = {product}");
@@ -116,7 +139,7 @@ namespace studying_c_sharp_izhar_mashkif2.euler_problems
                 }//end of inner loop
 
             }//end of outer loop
-            Console.WriteLine("result = " +maxPalindrom);
+            Console.WriteLine("result = " + maxPalindrom);
         }
     }
 }
